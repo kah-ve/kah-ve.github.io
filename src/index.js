@@ -94,6 +94,7 @@ class Board extends React.Component {
 
     return(
       <div>
+        <App />
         <table id="myTableId" className="myTable">
           {this.makeBoard()}
         </table>
@@ -114,7 +115,7 @@ class Board extends React.Component {
 
 ReactDOM.render(
   <Board />,
-  document.getElementById('root')
+  document.getElementById('reactSide')
 );
 
 // prevent right click on table
