@@ -1,0 +1,117 @@
+.imgandcard {
+    display: inline-flex;
+  }
+  
+  .imgCard {
+    position: relative;
+    margin: 50px;
+    margin-right: 10px;
+    margin-left: 5px;
+    width: 75px;
+    height: 70px;
+  }
+  
+  .imgCard img {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px;
+  }
+  
+  .github-profile {
+    background-color: rgba(0, 0, 0, 0.411);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px;
+    margin-right: 2px;
+    width: 400px;
+  }
+  
+  .name {
+    font-size: xx-large;
+    text-align: left;
+    color: rgb(255, 255, 255);
+  }
+  
+  .company {
+    display: block;
+    font-size: large;
+    text-align: left;
+    color: white;
+    width: 100%;
+  }
+  
+  .formBox {
+    display: flex;
+    background-color: darkseagreen;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  .buttonGit {
+    width: 160px;
+    margin-left: 10px;
+  
+    height: 40px;
+    background: linear-gradient(to bottom, #6095ad 0%,#437a97 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #3f6780;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+  }
+  
+  .buttonGit:active{
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+  }
+  
+  .inputGit {
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    border-radius:
+  }
+  
+  .App {
+  
+    display: flex;
+    border-radius: 15px;
+    background-color: #282c34;
+    flex-direction: column;
+    align-items: left;
+    
+    width: 500px;
+    padding: 15px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+  
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,.6);
+  }
+  
+  #titleApp {
+    text-align: center;
+    color: orange;
+    font-weight: 800px;
+    font-size: 50px;
+    position: relative;
+    bottom: 6px;
+  }
+  
+  .textDesc {
+    color: orange;
+    font-weight: bold;
+  }
+  

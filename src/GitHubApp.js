@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import TopNav from './TopNav';
+import "./GitHubApp.css"
 
 class Card extends React.Component {
   constructor(props) {
@@ -82,7 +83,7 @@ class Form extends React.Component {
   }
 }
 
-class App extends React.Component {
+class GitHubApp extends React.Component {
   constructor(props) {
     super(props);
 
@@ -100,6 +101,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <TopNav />
         <div className="App">
           <div id="titleApp">GitHub Cards</div>
           <Form onSubmit={this.addNewProfile} />
@@ -110,14 +112,11 @@ class App extends React.Component {
   }
 }
 
-export default App;
-
 const CardList = (props) => {
-  let i = 0;
   return (
     <>
       {props.data.map((profile) => (
-        <Card key={i++} {...profile} />
+        <Card key={profile.id} {...profile} />
       ))}
     </>
   );
@@ -133,3 +132,6 @@ const myData = [
     followers: 5
   },
 ];
+
+export default GitHubApp;
+

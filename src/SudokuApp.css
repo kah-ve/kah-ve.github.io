@@ -1,0 +1,38 @@
+/*  For Sudoku App*/
+table {
+    background-color: teal;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  td {
+    background-color: lightgray;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .botOfGrid {
+    margin-left: 45%;
+    font-weight: bold;
+  }
+  
+  #incrementAll {
+    color: green;
+  }
+  
+  #clearAll {
+    color: red;
+  }
+  
+  button {
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgb(228, 209, 209);
+  }
+  
+  button:hover {
+    background-color: rgb(157, 196, 228);
+  }
+  
