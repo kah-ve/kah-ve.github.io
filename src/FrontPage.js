@@ -13,7 +13,8 @@ class FrontPage extends React.Component {
         <div class="linkButtons">
           <Link className="theLink" to="./GitHubApp">Go to GitHub App</Link>
           <Link className="theLink" to="./SudokuApp">Go to Sudoku App</Link>
-          <Link className="theLink" to="./SpeedCount">Go to SpeedCount App</Link>
+          <Link className="theLink" to="./SpeedCountApp">Go to SpeedCount App</Link>
+          <Link className="theLink" to="./TodoApp">Go to Todo App</Link>
         </div>
         </>
       );

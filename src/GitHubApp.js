@@ -46,7 +46,7 @@ class Form extends React.Component {
       const res = await fetch(
         `https://api.github.com/users/${this.state.username}`
       );
-      if (res.status != "404") {
+      if (res.status !== "404") {
         const jsonObj = await res.json();
         this.props.onSubmit(jsonObj);
         console.log(jsonObj);
@@ -102,11 +102,12 @@ class GitHubApp extends React.Component {
     return (
       <>
         <TopNav />
-        <div className="App">
+        <div className="GitHubApp">
           <div id="titleApp">GitHub Cards</div>
           <Form onSubmit={this.addNewProfile} />
           <CardList data={this.state.profiles} />
         </div>
+        <div id="help-note"><b>Note:</b> Add a GitHub username to include their information in this card.</div>
       </>
     );
   }

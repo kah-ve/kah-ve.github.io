@@ -7,16 +7,18 @@ import FrontPage from './FrontPage';
 import SpeedCount from './SpeedCount/SpeedCount';
 
 import * as serviceWorker from './serviceWorker';
-import { Redirect, Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import {Redirect, Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import TodoApp from './ToDo/TodoApp';
 
 const routing = (
   <Router>
     <div>
-      <Route exact path="/" component={FrontPage} />
+      <Route exact path={process.env.PUBLIC_URL + '/'} component={FrontPage} />
       <Route path="/GitHubApp" component={GitHubApp} />
       <Route path="/SudokuApp" component={SudokuApp} />
-      <Route path="/SpeedCount" component={SpeedCount} />
-      <Redirect to="/" />
+      <Route path="/SpeedCountApp" component={SpeedCount} />
+      <Route path="/TodoApp" component={TodoApp} />
+      <Redirect to={process.env.PUBLIC_URL + '/'} />
     </div>
   </Router>
 )
