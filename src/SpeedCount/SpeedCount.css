@@ -1,0 +1,130 @@
+.game {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: thick solid black;
+    border-left: thin;
+    border-right: thin;
+    padding: 60px;
+  }
+  
+  .body {
+    display: flex;
+  }
+  
+  .help {
+    color: rgb(255, 217, 0);
+    margin: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 45px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    left: -10px;
+  }
+  
+  .left {
+    text-align: center;
+    width: 80%;
+    height: 300px;
+    border: thick solid rgb(85, 38, 0);
+
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  
+  .right {
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    position: relative;
+    top: 125px;
+  }
+  
+  .sun {
+    display: inline-block;
+    margin: 15px 15px;
+    width: 100px;
+  }
+  
+  .sun:after {
+    content: "\2600";
+    font-size: 45px;
+    color: #ff9100;
+  }
+  
+  .number {
+    border: 2px solid rgb(0, 0, 0);
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    padding-top: 5px;
+    font-size: 25px;
+    color: white;
+    font-family: monospace;
+  }
+  
+  .number:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .timer {
+      color: rgb(0, 0, 0);
+    margin-top: 3px;
+    margin-left: 3px;
+    font-size: 20px;
+  }
+
+  #timer-number {
+    font-size: 30px;
+    color: #ff9100;
+    font-weight: bold;
+  }
+
+  .help-note {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+  }
+  
+  .game-done .message {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px;
+    margin-top: 25%;
+  }
+
+  #play-again-btn {
+    width: 80;
+    margin-left: 10px;
+    
+    height: 40px;
+    background: linear-gradient(to bottom, #6095ad 0%,#437a97 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    
+    position: relative;
+
+    border-bottom: 4px solid #3f6780;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+  }
+  
+  #play-again-btn:active{
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+  }
+
+  #play-again-btn:hover{
+    background: linear-gradient(to bottom, #93c2d8 0%,#5f98b6 100%);
+  }

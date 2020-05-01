@@ -5,10 +5,11 @@ class TopNav extends React.Component {
   render() {
     return (
       <>
-      <div class="TopNavLinkButtons">
+      <div className="TopNavLinkButtons">
         <Link className="theLink" to="./">Go to Home Page</Link>
         <Link className="theLink" to="./GitHubApp">Go to GitHub App</Link>
         <Link className="theLink" to="./SudokuApp">Go to Sudoku App</Link>
+        <Link className="theLink" to="./SpeedCount">Go to SpeedCount App</Link>
       </div>
       </>
     );

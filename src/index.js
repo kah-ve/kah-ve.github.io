@@ -4,8 +4,10 @@ import './index.css';
 import GitHubApp from './GitHubApp';
 import SudokuApp from './SudokuApp';
 import FrontPage from './FrontPage';
+import SpeedCount from './SpeedCount/SpeedCount';
+
 import * as serviceWorker from './serviceWorker';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Redirect, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 const routing = (
   <Router>
@@ -13,6 +15,8 @@ const routing = (
       <Route exact path="/" component={FrontPage} />
       <Route path="/GitHubApp" component={GitHubApp} />
       <Route path="/SudokuApp" component={SudokuApp} />
+      <Route path="/SpeedCount" component={SpeedCount} />
+      <Redirect to="/" />
     </div>
   </Router>
 )

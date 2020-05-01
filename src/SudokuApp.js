@@ -44,7 +44,7 @@ class Square extends React.Component {
     }
   }
   
-  class Board extends React.Component {
+  class GitHubApp extends React.Component {
     constructor(props) {
       super(props);
   
@@ -57,12 +57,15 @@ class Square extends React.Component {
     
     makeBoard()  {
       let table = [];
+      let id = 0;
       for (let i = 0; i < 5; i++) {
         let children = [];
         for (let j = 0; j < 5; j++) {
-          children.push(<Square clearAll={this.state.clearAll} text={this.state.incrementAmount}/>);
+          children.push(<Square key={id} clearAll={this.state.clearAll} text={this.state.incrementAmount}/>);
+          id += 1;
         }
-        table.push(<tr>{children}</tr>);
+        table.push(<tr key={id}>{children}</tr>);
+        id += 1;
       }
   
       if (this.state.clearAll) {
@@ -99,7 +102,9 @@ class Square extends React.Component {
         <div>
           <TopNav />
           <table id="myTableId" className="myTable" onContextMenu={this.contextMenu}>
-            {this.makeBoard()}
+            <tbody>
+              {this.makeBoard()}
+            </tbody>
           </table>
           <div className="botOfGrid">
             <div>
@@ -115,4 +120,4 @@ class Square extends React.Component {
       );
     }
   }
-export default Board;
+export default GitHubApp;
