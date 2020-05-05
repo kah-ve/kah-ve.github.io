@@ -86,6 +86,7 @@ class TodoApp extends React.Component {
       projectInput: "Grocery Shopping",
       todoInput: "",
       errorMessage: "",
+      reloadTodo: 1,
     };
 
     this.getProjectsList = this.getProjectsList.bind(this);
@@ -125,12 +126,14 @@ class TodoApp extends React.Component {
 
     this.setState({
       data: updatedData,
+      reloadTodo: this.state.reloadTodo + 1,
     });
   }
 
   onProjectClick(projectName) {
     this.setState({
       projectInput: projectName,
+      reloadTodo: this.state.reloadTodo + 1,
     });
   }
 
@@ -197,9 +200,9 @@ class TodoApp extends React.Component {
 
     this.setState({
       data: newData,
+      reloadTodo: this.state.reloadTodo + 1,
+      todoInput: "", 
     });
-
-    this.setState({ todoInput: "" });
   }
 
   render() {
@@ -246,7 +249,7 @@ class TodoApp extends React.Component {
               <div className="title-bar">
                 <h4 className="todo-titles">Todos</h4>
               </div>
-              <div key={shortid.generate()} id="todos-list">
+              <div key={this.state.reloadTodo} id="todos-list">
                 {this.getTodosList()}
               </div>
             </div>
