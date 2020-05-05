@@ -16,3 +16,10 @@ code {
     monospace;
 }
 
+#reactSide {
+  display: flex;
+  justify-content: center;
+
+  width: 95vw;
+  height: 95vh;
+}

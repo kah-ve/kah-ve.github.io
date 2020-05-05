@@ -14,11 +14,11 @@ const routing = (
   <Router>
     <div>
       <Route exact path={process.env.PUBLIC_URL + '/'} component={FrontPage} />
-      <Route path="/GitHubApp" component={GitHubApp} />
-      <Route path="/SudokuApp" component={SudokuApp} />
-      <Route path="/SpeedCountApp" component={SpeedCount} />
-      <Route path="/TodoApp" component={TodoApp} />
-      <Redirect to={process.env.PUBLIC_URL + '/'} />
+      <Route path={"/GitHubApp"} component={GitHubApp} />
+      <Route path={"/SudokuApp"} component={SudokuApp} />
+      <Route path={"/SpeedCountApp"} component={SpeedCount} />
+      <Route path={"/TodoApp"} component={TodoApp} />
+      <Redirect to={'/'} />
     </div>
   </Router>
 )

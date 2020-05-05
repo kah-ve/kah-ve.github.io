@@ -85,6 +85,7 @@ class TodoApp extends React.Component {
       ],
       projectInput: "Grocery Shopping",
       todoInput: "",
+      errorMessage: "",
     };
 
     this.getProjectsList = this.getProjectsList.bind(this);
@@ -166,10 +167,16 @@ class TodoApp extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
-    if (this.state.projectInput !== "" || this.state.todoInput !== "")
+    if (this.state.projectInput == "" || this.state.todoInput == "")
     {
-      alert("Include both a todo and project to display in the app.")
+      this.setState({
+        errorMessage: "Both fields must be filled to create a todo.",
+      });
       return;
+    } else {
+      this.setState({
+        errorMessage: "",
+      });
     }
 
     let savedIndex = -1;
@@ -196,15 +203,16 @@ class TodoApp extends React.Component {
   }
 
   render() {
+    const displayError = this.state.errorMessage !== "" ? "inherit" : "none";
+
     return (
       <Fragment>
         <TopNav />
         <h1
-          style={{ color: "red", margin: "50px auto -80px auto" }}
+          style={{ color: "black", margin: "100px auto -100px auto", width: "600px" }}
           id="greeting"
         >
-          {" "}
-          In Progress{" "}
+          Todo List
         </h1>
         <div className="container">
           <div className="top-bar">
@@ -224,6 +232,7 @@ class TodoApp extends React.Component {
               />
               <input type="submit" value="Submit" onClick={this.onSubmit} />
             </form>
+            <div style={{display: displayError }} className="error-message">{this.state.errorMessage}</div>
           </div>
           <div className="todo-body">
             <div className="left-nav">
