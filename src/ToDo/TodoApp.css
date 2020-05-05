@@ -214,8 +214,8 @@
 .project-close-button {
   visibility: visible !important;
   position: absolute;
-  bottom: 25px;
-  left: 138px;
+  top: -4px;
+  right: 0px;
   font-size: 30px;
 }
 

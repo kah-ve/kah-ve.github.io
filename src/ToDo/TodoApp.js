@@ -166,6 +166,12 @@ class TodoApp extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
+    if (this.state.projectInput !== "" || this.state.todoInput !== "")
+    {
+      alert("Include both a todo and project to display in the app.")
+      return;
+    }
+
     let savedIndex = -1;
     this.state.data.forEach((arr, index) => {
       if (arr[0] === this.state.projectInput) {
@@ -208,7 +214,6 @@ class TodoApp extends React.Component {
                 placeholder="Add todo"
                 value={this.state.todoInput}
                 onChange={this.onChangeTodo}
-                required
               />
               <input
                 type="text"
