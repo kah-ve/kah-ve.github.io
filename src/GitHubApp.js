@@ -15,7 +15,7 @@ class Card extends React.Component {
     return (
       <div className="imgandcard">
         <div className="imgCard">
-          <img src={this.props.avatar_url} />
+          <img src={this.props.avatar_url} alt=""/>
         </div>
         <div className="github-profile">
           <div className="info">
@@ -38,6 +38,7 @@ class Form extends React.Component {
 
     this.state = {
       username: "",
+      errorMessage: "",
     };
   }
 
@@ -46,16 +47,18 @@ class Form extends React.Component {
       const res = await fetch(
         `https://api.github.com/users/${this.state.username}`
       );
-      if (res.status !== "404") {
+      if (res.status !== 404) {
         const jsonObj = await res.json();
         this.props.onSubmit(jsonObj);
         console.log(jsonObj);
         this.setState({
           username: "",
         });
+        this.setState({errorMessage: ""});
       }
       else {
-        console.log("API Fetch Failed.");
+        // alert("API Fetch Failed.");
+        this.setState({errorMessage: "API fetch failed. Enter a valid GitHub user."});
       }
 
   };
@@ -68,7 +71,8 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form type="submit" className="formBox" onSubmit={this.handleSubmit}>
+      <>
+      <form type="submit" className="git-form-box" onSubmit={this.handleSubmit}>
         <input
           className="inputGit"
           type="text"
@@ -79,6 +83,8 @@ class Form extends React.Component {
         />
         <button className="buttonGit">Add User</button>
       </form>
+      <div className="error-message">{this.state.errorMessage}</div>
+      </>
     );
   }
 }

@@ -1,9 +1,8 @@
 .imgandcard {
-    display: inline-flex;
+    display: flex;
   }
   
   .imgCard {
-    position: relative;
     margin: 50px;
     margin-right: 10px;
     margin-left: 5px;
@@ -12,7 +11,6 @@
   }
   
   .imgCard img {
-    display: block;
     min-width: 100%;
     min-height: 100%;
     max-width: 100%;
@@ -26,7 +24,7 @@
     border-radius: 15px;
     margin: 15px;
     margin-right: 2px;
-    width: 400px;
+    width: 75%;
   }
   
   .name {
@@ -36,14 +34,13 @@
   }
   
   .company {
-    display: block;
     font-size: large;
     text-align: left;
     color: white;
     width: 100%;
   }
   
-  .formBox {
+  .git-form-box {
     display: flex;
     background-color: darkseagreen;
     padding: 15px;
@@ -58,15 +55,13 @@
     background: linear-gradient(to bottom, #6095ad 0%,#437a97 100%); /* W3C */
     border: none;
     border-radius: 5px;
-    position: relative;
     border-bottom: 4px solid #3f6780;
     color: #fbfbfb;
+
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
-    text-align: center;
     
-    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
     cursor: pointer;
   }
   
@@ -75,20 +70,22 @@
     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
     box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
   }
+
+  .buttonGit:hover {
+    background: linear-gradient(to bottom, #114b66 0%,#3d657a 100%); /* W3C */
+  }
   
   .inputGit {
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     border-radius: 5px;
+    width: 60%;
   }
   
   .GitHubApp {
-    display: flex;
     border-radius: 15px;
     background-color: #282c34;
-    flex-direction: column;
-    align-items: left;
     
     width: 500px;
     padding: 15px;
@@ -121,3 +118,16 @@
     margin-top: 15px;
     font-size: 15px;
   }
+
+  .error-message {
+    color: red;
+    margin-left: 10px;
+    padding:10px;
+    padding-bottom: 0px;
+    position: relative;
+    bottom: 8px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+  }
+

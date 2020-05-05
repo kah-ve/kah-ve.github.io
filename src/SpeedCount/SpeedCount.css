@@ -64,6 +64,7 @@
     font-size: 25px;
     color: white;
     font-family: monospace;
+    user-select: none;
   }
   
   .number:hover {

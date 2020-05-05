@@ -124,7 +124,7 @@ const Game = (props) => {
             </div>
           </div>
           <Timer secondsLeft={secondsLeft} setSecondsLeft={setSecondsLeft} availableNums={availableNums} />
-          <div className="help-note"><b>Note:</b> Select multiple numbers to add them to equal the count of the suns. You can also deselect a number you've selected by clicking on it again. </div>
+          <div className="help-note"><b>Note:</b> Select the number(s) that adds up to equal the count of the suns. You can also deselect a number you've selected by clicking on it again. </div>
         </div>
       </>
     );

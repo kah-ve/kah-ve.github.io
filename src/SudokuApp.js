@@ -44,7 +44,7 @@ class Square extends React.Component {
     }
   }
   
-  class GitHubApp extends React.Component {
+  class SudokuApp extends React.Component {
     constructor(props) {
       super(props);
   
@@ -101,6 +101,7 @@ class Square extends React.Component {
       return(
         <div>
           <TopNav />
+          <h1 style={{color: "red", margin: "50px auto"}} id="greeting"> In Progress </h1>
           <table id="myTableId" className="myTable" onContextMenu={this.contextMenu}>
             <tbody>
               {this.makeBoard()}
@@ -120,4 +121,4 @@ class Square extends React.Component {
       );
     }
   }
-export default GitHubApp;
+export default SudokuApp;
