@@ -4,21 +4,71 @@ import shortid from "shortid";
 
 import TopNav from "../TopNav";
 
-const Project = (props) => {
-  return (
-    <div className="project-item" onClick={props.onClick}>
-      {props.projectStr}
-    </div>
-  );
-};
+class Project extends React.Component {
+  constructor(props) {
+    super(props);
 
-const Todo = (props) => {
-  return (
-    <div className="todo-item">
-      <li>{props.todosStr}</li>
-    </div>
-  );
-};
+    this.state = {
+      toggleDisplay: "hidden",
+    }
+
+    this.toggleCloseDisplay = this.toggleCloseDisplay.bind(this);
+  }
+
+  toggleCloseDisplay() {
+    this.setState({
+      toggleDisplay: this.state.toggleDisplay === "hidden" ?  "visible" : "hidden", 
+    })
+  };
+
+  render() {
+
+    return (
+      <div className="project-item" onClick={this.props.onClick} onMouseEnter={this.toggleCloseDisplay} onMouseLeave={this.toggleCloseDisplay}>
+        {this.props.projectStr}
+        <div
+          className="project-close-button"
+          style={{ visibility: this.state.toggleDisplay }}
+          onClick={() => this.props.projectCloseClicked(this.props.projectStr)}
+        ></div>
+      </div>
+    );
+  }
+
+}
+
+class Todo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      toggleDisplay: "hidden",
+    }
+
+    this.toggleCloseDisplay = this.toggleCloseDisplay.bind(this);
+  }
+
+  toggleCloseDisplay() {
+    this.setState({
+      toggleDisplay: this.state.toggleDisplay === "hidden" ?  "visible" : "hidden", 
+    })
+  };
+
+  render() {
+
+    return (
+      <div className="todo-item" onMouseEnter={this.toggleCloseDisplay} onMouseLeave={this.toggleCloseDisplay}>
+        {this.props.todosStr}
+        <div
+          className="close-button"
+          style={{ visibility: this.state.toggleDisplay }}
+          onClick={() => this.props.closeClicked(this.props.todosStr)}
+        ></div>
+      </div>
+    );
+  }
+}
+
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
@@ -43,6 +93,38 @@ class TodoApp extends React.Component {
     this.onChangeProject = this.onChangeProject.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onProjectClick = this.onProjectClick.bind(this);
+    this.closeClicked = this.closeClicked.bind(this);
+    this.projectCloseClicked = this.projectCloseClicked.bind(this);
+  }
+
+  projectCloseClicked(projectStr) {
+    let updatedData = this.state.data;
+
+    updatedData.forEach((arr, index) => {
+      if (arr[0] === projectStr) {
+        updatedData.splice(index, 1);
+      }
+    });
+
+    this.setState({
+      data: updatedData,
+    });
+  }
+
+  closeClicked(todoStr) {
+    let updatedData = this.state.data;
+
+    updatedData.forEach((arr, index) => {
+      arr.forEach((item, innerIndex) => {
+        if (item === todoStr) {
+          updatedData[index].splice(innerIndex, 1);
+        }
+      }) 
+    });
+
+    this.setState({
+      data: updatedData,
+    });
   }
 
   onProjectClick(projectName) {
@@ -56,6 +138,7 @@ class TodoApp extends React.Component {
       <Project
         onClick={() => this.onProjectClick(arr[0])}
         projectStr={arr[0]}
+        projectCloseClicked={this.projectCloseClicked}
       />
     ));
   }
@@ -66,7 +149,7 @@ class TodoApp extends React.Component {
     );
     if (currProjectArr.length === 1) {
       currProjectArr = currProjectArr[0].slice(1);
-      return currProjectArr.map((todoItem) => <Todo todosStr={todoItem} />);
+      return currProjectArr.map((todoItem) => <Todo closeClicked={this.closeClicked} todosStr={todoItem} />);
     } else {
       return [];
     }
@@ -149,7 +232,9 @@ class TodoApp extends React.Component {
               <div className="title-bar">
                 <h4 className="todo-titles">Todos</h4>
               </div>
-              <div key={shortid.generate()} id="todos-list">{this.getTodosList()}</div>
+              <div key={shortid.generate()} id="todos-list">
+                {this.getTodosList()}
+              </div>
             </div>
           </div>
         </div>

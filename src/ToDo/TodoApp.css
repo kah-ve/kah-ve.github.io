@@ -176,6 +176,8 @@
   padding: 5px;
   border-radius: 5px;
   margin: 5px;
+
+  width: 220px;
 }
 
 .todo-titles {
@@ -192,4 +194,35 @@
   font-size: 20px;
   margin-top: 15px;
   font-size: 15px;
+}
+
+.close-button {
+  float: right;
+  font-size: 20px;
+  position: relative;
+  bottom: 1px;
+}
+
+.close-button:after {
+  content: "\00d7";
+}
+
+.close-button:hover {
+  color: red;
+}
+
+.project-close-button {
+  visibility: visible !important;
+  position: absolute;
+  bottom: 25px;
+  left: 138px;
+  font-size: 30px;
+}
+
+.project-close-button:after {
+  content: "\00d7";
+}
+
+.project-close-button:hover {
+  color: red;
 }
