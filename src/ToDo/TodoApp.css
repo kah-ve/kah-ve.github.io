@@ -4,6 +4,8 @@
   align-items: center;
   margin-top: 150px;
   user-select: none;
+
+  margin-bottom: 200px;
 }
 
 .top-bar {
@@ -140,7 +142,7 @@
   font-family: 'Garamond';
   font-weight: 700;
 
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-name: slide-in;
   animation-iteration-count: 1;
 }
