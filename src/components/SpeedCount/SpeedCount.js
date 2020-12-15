@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Game from"./Game";
-import TopNav from "../TopNav";
+import TopNav from "../TopNav/TopNav";
 
 import "./SpeedCount.css";
 

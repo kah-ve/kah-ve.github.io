@@ -1,5 +1,5 @@
 import React from "react";
-import TopNav from './TopNav';
+import TopNav from '../TopNav/TopNav';
 import "./GitHubApp.css"
 
 class Card extends React.Component {
@@ -133,7 +133,7 @@ const myData = [
   {
     name: "John Smith",
     avatar_url:
-      "https://wallpaperhd.wiki/wp-content/uploads/4k-wallpaper-minimalist-the-witcher-3-wild-hunt-minimalist-uhdpaper.com-4k-5.1321-wp.thumbnail.jpg",
+      "https://raw.githubusercontent.com/kah-ve/kah-ve.github.io/gh-pages/thumbnaildemo.jpg",
     bio: "Software Engineer at Earth Labs",
     public_repos: 3,
     followers: 5

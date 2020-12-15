@@ -1,15 +1,21 @@
 #front-page-container {
   display:flex;
   flex-direction: column;
-  justify-self: center;
-  align-items: center;
+  min-width: 600px;
 }
 
 .linkButtons {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
+/* 
+@media (max-width: 850px) {
+  .linkButtons {
+    flex-direction: column;
+  }
+} */
   
 .theLink {
   background-color: #437a97;
@@ -18,11 +24,8 @@
   color: white;
   text-decoration: none;
   text-align:center;
-
-  /* box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2); */
-
   border: 2px solid #4c97c0;
-  width: 200px;
+  width: 180px;
 }
 
 .theLink:hover, .theLink:focus {
@@ -36,12 +39,15 @@
 }
 
 .TopNavLinkButtons {
-  width: 1250px;
   margin-top: 30px;
   margin-left: auto;
   margin-bottom: -20px;
   margin-right: auto;
   display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  justify-content: center;
+  
 }
 
 #greeting {
@@ -57,5 +63,5 @@
   padding: 40px;
   margin: 100px;
   border: 5px solid black;
-  width: 500px;
+  max-width: 1000px;
 }

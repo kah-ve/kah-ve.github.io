@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+
+import {Redirect, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 class TopNav extends React.Component {
   render() {

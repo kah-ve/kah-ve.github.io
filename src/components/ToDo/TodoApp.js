@@ -1,8 +1,6 @@
 import React, { useState, Fragment } from "react";
 import "./TodoApp.css";
-import shortid from "shortid";
-
-import TopNav from "../TopNav";
+import TopNav from "../TopNav/TopNav";
 
 class Project extends React.Component {
   constructor(props) {

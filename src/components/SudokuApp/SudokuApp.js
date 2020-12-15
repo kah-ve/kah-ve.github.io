@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './SudokuApp.css';
-import TopNav from './TopNav';
+import TopNav from "../TopNav/TopNav";
 
 class Square extends React.Component {
     constructor(props) {

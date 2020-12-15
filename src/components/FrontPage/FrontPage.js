@@ -1,10 +1,7 @@
 import React from 'react';
 import './FrontPage.css';
 
-import ReactGA from 'react-ga';
-
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-
+import {Link, BrowserRouter as Router } from 'react-router-dom'
 
 class FrontPage extends React.Component {
     render() {
